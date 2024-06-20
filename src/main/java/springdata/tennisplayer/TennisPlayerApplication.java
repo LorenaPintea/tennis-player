@@ -8,7 +8,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.sql.Date;
-import java.sql.Time;
 
 @SpringBootApplication
 public class TennisPlayerApplication implements CommandLineRunner {
@@ -29,7 +28,7 @@ public class TennisPlayerApplication implements CommandLineRunner {
                         new Date(System.currentTimeMillis()), 17)));
 
         //Updating a player
-        logger.info("Updating Player with Id 4: {}",  playerDao.updatePlayer(
+        logger.info("Updating Player with Id 4: {}", playerDao.updatePlayer(
                 new Player(4, "Thiem", "Austria",
                         Date.valueOf("1993-09-03"), 17)));
 

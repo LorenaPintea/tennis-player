@@ -1,8 +1,18 @@
-package springdata.tennisplayer;
+package springdatajpa.tennisplayer;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 
 import java.sql.Date;
 
+
+@Entity
+@NamedQuery(name = "get_all_players", query = "select p from Player p")
 public class Player {
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
     private String nationality;
@@ -14,6 +24,14 @@ public class Player {
 
     public Player(int id, String name, String nationality, Date birthday, int titles) {
         this.id = id;
+        this.name = name;
+        this.nationality = nationality;
+        this.birthday = birthday;
+        this.titles = titles;
+    }
+
+    public Player(String name, String nationality, Date birthday, int titles) {
+        super();
         this.name = name;
         this.nationality = nationality;
         this.birthday = birthday;
